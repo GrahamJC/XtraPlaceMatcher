@@ -197,6 +197,7 @@ if __name__ == '__main__':
             if (secs_to_off <= 300 and secs_since_check >= 60) or (secs_to_off <= 1800 and secs_since_check >= 300) or (secs_since_check >= 900):
                 print(f"{dt.datetime.now()}: Get odds for {event.course} at {event.date_time.time()}")
                 get_event_odds(db_session, event)
+        db_seesion.close()
         sleep(30)
     sys.exit()
 
